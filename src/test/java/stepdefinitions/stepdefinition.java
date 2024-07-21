@@ -28,12 +28,12 @@ import io.cucumber.java.en.When;
 
 public class stepdefinition {
 	
-	public WebDriver driver;
-	public HomePage home;
+	public static WebDriver driver;
+	public static HomePage home;
 	List<String> selected_minister_list = new ArrayList<>();
 	
-	@Given("I navigate to url")
-	public void i_navigate_to_url() {
+	@Given("I navigate to specified URL")
+	public void i_navigate_to_specified_url() {
 	    
 		   driver = new ChromeDriver();
 		   driver.get("https://www.nsw.gov.au/media-releases");
@@ -41,8 +41,8 @@ public class stepdefinition {
            
 	}
 	
-	@Given("I expand the Minister List")
-	public void i_expand_the_minister_list() {
+	@Given("I expand the Minister List available on page")
+	public void i_expand_the_minister_list_available_on_page() {
 	    // Write code here that turns the phrase above into concrete actions
 		
 		 home = PageFactory.initElements(driver, HomePage.class);
@@ -50,8 +50,8 @@ public class stepdefinition {
        
 	 	  }
 	
-	@Given("I select the following ministers:")
-	public void i_select_the_following_ministers(List<String> ministersList) {
+	@Given("I select the following ministers given below:")
+	public void i_select_the_following_ministers_given_below(List<String> ministersList) {
 	    
 		selected_minister_list.addAll(ministersList);
 		List<WebElement> webElementMinisterList=home.getAllMinsterList() ;
@@ -62,15 +62,15 @@ public class stepdefinition {
 	}
 	
 	
-	@When("apply filter on the seleceted Minister List")
-	public void apply_filter_on_the_seleceted_minister_list() throws InterruptedException {
+	@When("I click on Apply Filter after selection")
+	public void i_click_on_apply_filter_after_selection() throws InterruptedException {
 	    
              home.click_Apply_Filter();
 	    	
 	}
 	
-	@Then("I validate all the minsters selected")
-	public void i_validate_all_the_minsters_selected() {
+	@Then("I validate filters are applied correctly and corresponding Minister Media Release cards are visible")
+	public void i_validate_filters_are_applied_correctly_and_corresponding_minister_media_release_cards_are_visible() {
 	    // Write code here that turns the phrase above into concrete actions
 	   
 		try {
@@ -97,14 +97,32 @@ public class stepdefinition {
 	
 	
 	
-	
-	@Then("lastly click on Clear All and validate it")
-	public void lastly_click_on_clear_all_and_validate_it() {
-	    // Write code here that turns the phrase above into concrete actions
+	@Then("then I close the browser")
+	public void then_i_close_the_browser() {
+	   
+		 driver.close();
+		 driver.quit();
 		
-        home.click_ClearAll_Filters();
+	}
+	
+	
+	
+	@Given("I am on the page with Filters applied on Ministers")
+	public void i_am_on_the_page_with_filters_applied_on_ministers() {
+         
+		System.out.println(driver.getCurrentUrl());
 		 
-		 //Assertion: Validate the URL after clicking "Clear All Filters"
+	}
+	@When("I click on CLear All to remove the applied filters")
+	public void i_click_on_c_lear_all_to_remove_the_applied_filters() {
+        
+		home.click_ClearAll_Filters();
+		 }
+	
+	@Then("I validate that Filters are removed correcly")
+	public void i_validate_that_filters_are_removed_correcly() {
+	   
+		//Assertion: Validate the URL after clicking "Clear All Filters"
 		 String ExpectedUrl ="https://www.nsw.gov.au/media-releases?";
 		 String ActualUrl = driver.getCurrentUrl();
 		 assertEquals(ExpectedUrl, ActualUrl);
@@ -116,17 +134,9 @@ public class stepdefinition {
 		 for(WebElement minister:Minister_WebElements)
 		 {
 			 assertFalse(minister.isSelected());
-		 }
-		 
+		 }	
 		
-	   
-	}
-
-	
-	@Then("Finally close the browser")
-	public void finally_close_the_browser() {
-	   
-		driver.quit();
+		 
 	}
 	
 	
