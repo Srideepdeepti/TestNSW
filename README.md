@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 6008fc426a15ef815d5a02591588698a9e4012b2
 Prerequisite: Eclipse and Maven should be installed on machine
 
 Git Repoistory link: https://github.com/Srideepdeepti/TestNSW.git
@@ -43,13 +39,3 @@ Scenario2: Validate the Clear All functionality
 
 
 
-<<<<<<< HEAD
-# TestNSW
-=======
-=======
->>>>>>> 6008fc426a15ef815d5a02591588698a9e4012b2
-# TestNSW
-# Prequisite :
-# Right click on /TestNSW/src/test/java/cucumber/Options/testRunner.java and run this with Junit
-# 
->>>>>>> d061fe2adbd8a7f360cea20bd84ff705802a7da5
