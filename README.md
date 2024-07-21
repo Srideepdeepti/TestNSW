@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Prerequisite: Eclipse and Maven should be installed on machine
 
 Git Repoistory link: https://github.com/Srideepdeepti/TestNSW.git
@@ -40,3 +41,9 @@ Scenario2: Validate the Clear All functionality
 
 
 # TestNSW
+=======
+# TestNSW
+# Prequisite :
+# Right click on /TestNSW/src/test/java/cucumber/Options/testRunner.java and run this with Junit
+# 
+>>>>>>> d061fe2adbd8a7f360cea20bd84ff705802a7da5
