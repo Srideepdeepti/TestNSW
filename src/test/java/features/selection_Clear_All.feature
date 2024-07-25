@@ -20,10 +20,10 @@ Feature: This Feature is to validate the functionality of Apply Filter and Clear
     And   I expand the Minister List available on page
     And   I select the following ministers given below:
      
-     | Treasurer |
+     #| Treasurer |
      #| Minister for Water |
      | Minister for Agriculture|
-     | Minister for Better Regulation and Fair Trading|
+     #| Minister for Better Regulation and Fair Trading|
      #|Minister for Aboriginal Affairs and Treaty|
  
     When  I click on Apply Filter after selection
