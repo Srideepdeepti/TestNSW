@@ -38,7 +38,7 @@ public class HomePage {
 	
 	public void  clickonShowAll()
 	{
-		System.out.println("Test is Running");
+		//System.out.println("Test is Running");
 		 //System.out.println(this.driver.getCurrentUrl());
 		
  
