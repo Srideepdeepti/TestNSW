@@ -3,9 +3,9 @@
 Prerequisite: Eclipse and Maven should be installed on machine.
               Installed Java version 21.0.3
 
-Git Repoistory link: https://github.com/Srideepdeepti/TestNSW.git
+Git Repoistory link: https://github.com/Srideepdeepti/TestNSW.git   
 
-### How to import git folder on Eclipse
+### How to import git folder on Eclipse...
 
 Steps:
 1. Click on File Menu
