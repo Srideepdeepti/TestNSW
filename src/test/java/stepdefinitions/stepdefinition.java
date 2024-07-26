@@ -110,7 +110,7 @@ public class stepdefinition {
 	@Given("I am on the page with Filters applied on Ministers")
 	public void i_am_on_the_page_with_filters_applied_on_ministers() {
          
-		System.out.println(driver.getCurrentUrl());
+		//System.out.println(driver.getCurrentUrl());
 		 
 	}
 	@When("I click on CLear All to remove the applied filters")
